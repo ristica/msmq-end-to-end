@@ -1,5 +1,6 @@
-# msmq-end-to-end
+# MSMQ
 
+--------------------------------------
 
 MSMQ - first steps with this messaging technology
 
