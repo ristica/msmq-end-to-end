@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Msmq.OnlineShop.Entities.Product>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<fieldset>
+
+    @if (Model.Any())
+    {
+        <legend>Products Inventory</legend>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <hr />
+
+        <p>
+            @Html.ActionLink("New Order", "PlaceOrder")
+        </p>
+    }
+    else
+    {
+        <legend>No Products in the DB</legend>
+        <div>At the moment there are no products in the db...</div>
+        <p>
+            @Html.ActionLink("Place New Order", "PlaceOrder")
+        </p>
+    }
+
+</fieldset>
