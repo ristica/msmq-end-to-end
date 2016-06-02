@@ -9,24 +9,12 @@
     @if (Model.Any())
     {
         <legend>Products Inventory</legend>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductName)
-                </th>
-                <th></th>
-            </tr>
-
+        <ul>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProductName)
-                    </td>
-                </tr>
+                <li>@item.ProductName</li>
             }
-
-        </table>
+        </ul>
 
         <hr />
 

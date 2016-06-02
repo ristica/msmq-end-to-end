@@ -1,11 +1,12 @@
 ﻿using System.Web.Mvc;
+using Msmq.OnlineShop.Entities;
 using Msmq.OnlineShop.ViewModels;
 
 namespace Msmq.OnlineShop.Client.Controllers
 {
     public class HomeController : Controller
     {
-        private int _stock = 0;
+        private int _stock;
 
         [HttpGet]
         public ActionResult List()
@@ -36,6 +37,11 @@ namespace Msmq.OnlineShop.Client.Controllers
 
             this.PlaceNewOrder(vm);
 
+            Db.Repository.ProductRepository.Create(new Product
+            {
+                ProductName = vm.ProductName
+            });
+
             return RedirectToAction("List");
         }
 
@@ -46,7 +52,7 @@ namespace Msmq.OnlineShop.Client.Controllers
             var service = new ApplicationServices.IsProductInStockService();
             stock = service.GetCurrentStock(productId);
 
-            //if (stock > quantity)
+            if (stock < quantity)
                 return false;
 
             return true;

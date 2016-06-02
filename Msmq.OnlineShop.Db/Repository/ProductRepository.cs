@@ -25,10 +25,6 @@ namespace Msmq.OnlineShop.Db.Repository
 
         public static void Create(Product product)
         {
-            var exists = Products.FirstOrDefault(p => p.ProductId == product.ProductId);
-            if (exists != null)
-                return;
-
             Products.Add(product);
         }
 

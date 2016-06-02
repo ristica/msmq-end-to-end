@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96A6595F-0886-48F2-970B-F57AD69A47DA}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{7E9F372C-590C-467E-A45B-3FD393661B73}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Msmq.OnlineShop.Messages</RootNamespace>
-    <AssemblyName>Msmq.OnlineShop.Messages</AssemblyName>
+    <RootNamespace>Msmq.OnlineShop.PackagingHandler</RootNamespace>
+    <AssemblyName>Msmq.OnlineShop.PackagingHandler</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,19 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\PlaceOrderCommand.cs" />
-    <Compile Include="Events\OrderPlacedEvent.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\ProductInStockRequest.cs" />
-    <Compile Include="Queries\ProductInStockResponse.cs" />
-    <Compile Include="Workflows\PackagingWorkflow.cs" />
-    <Compile Include="Workflows\ShippingWorkflow.cs" />
-    <Compile Include="Workflows\UpdateStockWorkflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Msmq.OnlineShop.Common\Msmq.OnlineShop.Common.csproj">
       <Project>{37C38883-3B68-4651-BA6C-B7206A56C92B}</Project>
       <Name>Msmq.OnlineShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Msmq.OnlineShop.Integration\Msmq.OnlineShop.Integration.csproj">
+      <Project>{ec7b91c3-2525-40ca-8944-9c5d85890bf7}</Project>
+      <Name>Msmq.OnlineShop.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Msmq.OnlineShop.Messages\Msmq.OnlineShop.Messages.csproj">
+      <Project>{96A6595F-0886-48F2-970B-F57AD69A47DA}</Project>
+      <Name>Msmq.OnlineShop.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
