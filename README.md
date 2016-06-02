@@ -22,5 +22,5 @@ Response comes back from the InventoryManager.
 
 Multicast:
 
-Client places an order. Order will be handled by SalesHandler which then fires an event (OrderPlacedevent) and pushes message to the queue. At this endpoint, there are 2 Handlers (PAckagingHAndler and ShippingHandler) listening...
+Client places an order. Order will be handled by SalesHandler which then fires an event (OrderPlacedevent) and pushes message to the queue. At this endpoint, there are 2 Handlers (PackagingHandler and ShippingHandler) listening...
 
