@@ -7,7 +7,7 @@ namespace Msmq.OnlineShop.ApplicationServices
 {
     public class PlaceNewOrderService
     {
-        private const string PlaceOrderQueue = @".\private$\place-order";
+        private const string PlaceOrderQueue = @".\private$\place-order-queue";
 
         public void PlaceOrder(ProductViewModel vm)
         {

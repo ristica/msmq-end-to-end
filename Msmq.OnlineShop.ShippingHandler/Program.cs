@@ -23,18 +23,17 @@ namespace Msmq.OnlineShop.ShippingHandler
                     Console.WriteLine();
 
                     var message = queue.Receive();
+                    if (message == null) continue;
                     var body = message.BodyStream.ReadFromJson(message.Label);
-                    if (body.GetType() == typeof(OrderPlacedEvent))
-                    {
-                        var @event = body as OrderPlacedEvent;
-                        Console.WriteLine("\tReceived: {0}, at {1}", @event.Product, DateTime.Now);
+                    if (body.GetType() != typeof(OrderPlacedEvent)) continue;
+                    var @event = body as OrderPlacedEvent;
+                    Console.WriteLine("\tReceived: {0}, at {1}", @event.Product, DateTime.Now);
 
-                        var workflow = new ShippingWorkflow(@event.Product);
-                        workflow.Run();
+                    var workflow = new ShippingWorkflow(@event.Product);
+                    workflow.Run();
 
-                        Console.WriteLine("\tProcessed...");
-                        Console.WriteLine();
-                    }
+                    Console.WriteLine("\tProcessed...");
+                    Console.WriteLine();
                 }
             }
         }

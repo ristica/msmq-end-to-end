@@ -12,7 +12,7 @@ namespace Msmq.OnlineShop.SalesHandler
         {
             Console.Title = "SALES";
             Console.WriteLine();
-            const string placeOrderQueue = @".\private$\place-order";
+            const string placeOrderQueue = @".\private$\place-order-queue";
 
             using (var queue = new MessageQueue(placeOrderQueue))
             {
@@ -22,6 +22,7 @@ namespace Msmq.OnlineShop.SalesHandler
                     Console.WriteLine();
 
                     var message = queue.Receive();
+                    if (message == null) continue;
                     var messageBody = message.BodyStream.ReadFromJson(message.Label);
 
                     var messageType = messageBody.GetType();

@@ -8,7 +8,7 @@ namespace Msmq.OnlineShop.ApplicationServices
 {
     public class IsProductInStockService
     {
-        private const string RequestQueue = @".\private$\product-in-stock";
+        private const string RequestQueue = @".\private$\product-in-stock-queue";
 
         public int GetCurrentStock(int productId)
         {

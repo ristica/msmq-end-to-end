@@ -23,18 +23,19 @@ namespace Msmq.OnlineShop.PackagingHandler
                     Console.WriteLine();
 
                     var message = queue.Receive();
+                    if (message == null) continue;
                     var body = message.BodyStream.ReadFromJson(message.Label);
-                    if (body.GetType() == typeof(OrderPlacedEvent))
+                    if (body.GetType() != typeof(OrderPlacedEvent)) continue;
+                    if (body is OrderPlacedEvent @event)
                     {
-                        var @event = body as OrderPlacedEvent;
                         Console.WriteLine("\tReceived: {0}, at {1}", @event.Product, DateTime.Now);
 
                         var workflow = new PackagingWorkflow(@event.Product);
                         workflow.Run();
-
-                        Console.WriteLine("\tProcessed...");
-                        Console.WriteLine();
                     }
+
+                    Console.WriteLine("\tProcessed...");
+                    Console.WriteLine();
                 }
             }
         }

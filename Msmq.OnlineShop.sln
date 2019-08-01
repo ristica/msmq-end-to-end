@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msmq.OnlineShop.Integration", "Msmq.OnlineShop.Integration\Msmq.OnlineShop.Integration.csproj", "{EC7B91C3-2525-40CA-8944-9C5D85890BF7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msmq.OnlineShop.Messages", "Msmq.OnlineShop.Messages\Msmq.OnlineShop.Messages.csproj", "{96A6595F-0886-48F2-970B-F57AD69A47DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msmq.OnlineShop.Common", "Msmq.OnlineShop.Common\Msmq.OnlineShop.Common.csproj", "{37C38883-3B68-4651-BA6C-B7206A56C92B}"
@@ -41,10 +39,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC7B91C3-2525-40CA-8944-9C5D85890BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC7B91C3-2525-40CA-8944-9C5D85890BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC7B91C3-2525-40CA-8944-9C5D85890BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC7B91C3-2525-40CA-8944-9C5D85890BF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{96A6595F-0886-48F2-970B-F57AD69A47DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96A6595F-0886-48F2-970B-F57AD69A47DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96A6595F-0886-48F2-970B-F57AD69A47DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -94,7 +88,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EC7B91C3-2525-40CA-8944-9C5D85890BF7} = {A109CFEF-CCEF-4AB7-AA0B-E4E951812BEC}
 		{96A6595F-0886-48F2-970B-F57AD69A47DA} = {A109CFEF-CCEF-4AB7-AA0B-E4E951812BEC}
 		{37C38883-3B68-4651-BA6C-B7206A56C92B} = {A109CFEF-CCEF-4AB7-AA0B-E4E951812BEC}
 		{4BFE03D5-D420-44DD-B3EB-B043076E4F73} = {BE69D836-92AE-4605-AB3A-4ADDB8C9F3C0}
@@ -106,5 +99,8 @@ Global
 		{38AA961D-96AC-43DA-B0AC-ED9859A33634} = {CBBFDDA0-933C-4DCE-9C0F-8BA8B1253FFC}
 		{CA737EE6-D472-4240-9D6F-06E8E7A2F8CC} = {CBBFDDA0-933C-4DCE-9C0F-8BA8B1253FFC}
 		{7E9F372C-590C-467E-A45B-3FD393661B73} = {CBBFDDA0-933C-4DCE-9C0F-8BA8B1253FFC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33E9C1E6-F637-49BA-9DF4-1E487DB1EB46}
 	EndGlobalSection
 EndGlobal

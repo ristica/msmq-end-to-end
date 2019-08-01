@@ -11,7 +11,7 @@ namespace Msmq.OnlineShop.InventoryHandler
         {
             Console.Title = "PRODUCT IN STOCK";
             Console.WriteLine();
-            const string queueAddress = @".\private$\product-in-stock";
+            const string queueAddress = @".\private$\product-in-stock-queue";
 
             using (var queue = new MessageQueue(queueAddress))
             {
@@ -21,6 +21,7 @@ namespace Msmq.OnlineShop.InventoryHandler
                     Console.WriteLine();
 
                     var message = queue.Receive();
+                    if (message == null) continue;
                     var messageBody = message.BodyStream.ReadFromJson(message.Label);
 
                     var messageType = messageBody.GetType();

@@ -54,10 +54,6 @@
       <Project>{37C38883-3B68-4651-BA6C-B7206A56C92B}</Project>
       <Name>Msmq.OnlineShop.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Msmq.OnlineShop.Integration\Msmq.OnlineShop.Integration.csproj">
-      <Project>{ec7b91c3-2525-40ca-8944-9c5d85890bf7}</Project>
-      <Name>Msmq.OnlineShop.Integration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Msmq.OnlineShop.Messages\Msmq.OnlineShop.Messages.csproj">
       <Project>{96A6595F-0886-48F2-970B-F57AD69A47DA}</Project>
       <Name>Msmq.OnlineShop.Messages</Name>
