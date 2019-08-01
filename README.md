@@ -1,7 +1,3 @@
-# MSMQ
-
---------------------------------------
-
 MSMQ - first steps with this messaging technology
 
 This is small project demonstrationg the request-response pattern in msmq and then publishing events and subscribing to them by 
@@ -24,4 +20,3 @@ Response comes back from the InventoryManager.
 Multicast:
 
 Client places an order. Order will be handled by SalesHandler, who "fires" an event (OrderPlacedevent) and a message is going to be posted  to the queue. There are 2 subscribers (PackagingHandler and ShippingHandler) listening at this endpoint...
-
