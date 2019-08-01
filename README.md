@@ -2,8 +2,11 @@ MSMQ - how to implement a messaging technology
 
 ----------------------------------------------
 
-This is small project demonstrationg the request-response pattern in msmq and then publishing events and subscribing to them by 
-listener (multicast pattern).
+This one demonstrates:
+- request / response (pattern)
+- publish / subscribe (events)
+- msmq
+- multicast (pattern)
 
 
 To run the solution you need to restore nuget packages und run following projects
