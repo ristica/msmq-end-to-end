@@ -1,4 +1,6 @@
-MSMQ - first steps with this messaging technology
+MSMQ - how to implement a messaging technology
+
+----------------------------------------------
 
 This is small project demonstrationg the request-response pattern in msmq and then publishing events and subscribing to them by 
 listener (multicast pattern).
